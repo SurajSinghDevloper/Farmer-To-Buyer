@@ -44,8 +44,19 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    dob: {
+        type: String
+    },
     profilePic: {
         type: String
+    },
+    address: {
+        type: String
+    },
+    isVerify: {
+        type: String,
+        enum: ['true', 'false'],
+        default: 'false'
     }
 
 }, { timestamps: true });

@@ -63,7 +63,7 @@ exports.signin = async (req, res) => {
 
         const token = jwt.sign({ _id: user._id, role: user.role },
             process.env.JWT_SECRET, { expiresIn: "10d" });
-        const { _id, firstName, lastName, email, role, fullName, contactNumber } = user;
+        const { _id, firstName, lastName, email, role, fullName, contactNumber, address, profilePic, dob } = user;
         res.cookie('token', token, { expiresIn: '10d' });
         res.status(200).json({
             token,
@@ -74,7 +74,10 @@ exports.signin = async (req, res) => {
                 email,
                 role,
                 fullName,
-                contactNumber
+                contactNumber,
+                address,
+                profilePic,
+                dob
             },
         });
     } catch (error) {

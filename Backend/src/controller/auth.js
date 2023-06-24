@@ -19,7 +19,10 @@ exports.signup = async (req, res) => {
             lastName,
             email,
             password,
-            contactNumber
+            contactNumber,
+            address,
+            profilePic,
+            dob
         } = req.body;
         const hash_password = await bcrypt.hash(password, 10);
         // Create a new User instance with the extracted data
@@ -30,7 +33,10 @@ exports.signup = async (req, res) => {
             userName: uuid.v4(),
             hash_password,
             role: 'user',
-            contactNumber
+            contactNumber,
+            address,
+            profilePic,
+            dob
         });
 
         // Save the user to the database

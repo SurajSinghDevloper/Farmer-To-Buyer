@@ -9,6 +9,7 @@ const PORT = process.env.PORT;
 // Routes
 const adminRoutes = require('./src/routes/admin/auth');
 const userRoutes = require('./src/routes/auth');
+const userAccountAction = require('./src/routes/userRoutes');
 
 // Enable CORS
 app.use(cors());
@@ -34,6 +35,7 @@ try {
 
 app.use('/api', userRoutes);
 app.use('/api', adminRoutes);
+app.use('/api', userAccountAction);
 
 
 app.listen(process.env.PORT, () => console.log("Server running on port 🈂️🈂️🈂️🈂️" + process.env.PORT));
