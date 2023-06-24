@@ -3,8 +3,9 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { Row, Col } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { signup } from '../../actions/user.action'
+import { Link } from 'react-router-dom/cjs/react-router-dom';
 export const SignupModal = (props) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -12,8 +13,7 @@ export const SignupModal = (props) => {
     const [password, setPassword] = useState('');
     const [contactNumber, setContactNumber] = useState('');
     const [mobileError, setMobileError] = useState('');
-    // const auth = useSelector(state => state.auth);
-    // const user = useSelector(state => state.user);
+
     const handleMobileChange = (e) => {
         const inputValue = e.target.value;
         setContactNumber(inputValue);
@@ -87,7 +87,9 @@ export const SignupModal = (props) => {
                 <Button variant="secondary" onClick={props.handleClose}>
                     Close
                 </Button>
-                <Button variant="primary">Login</Button>
+                <Link to='/signin'>
+                    <Button variant="primary">Login</Button>
+                </Link>
                 <Button variant="success" type='submit' onClick={userSignup}>Submit</Button>
             </Modal.Footer>
         </Modal>

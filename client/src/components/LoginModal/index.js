@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import { Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../actions/auth.action';
-import { Redirect } from 'react-router-dom/cjs/react-router-dom'
+import { Link, Redirect } from 'react-router-dom/cjs/react-router-dom'
 export const LoginModal = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -49,7 +49,9 @@ export const LoginModal = (props) => {
                 <Button variant="secondary" onClick={props.handleClose}>
                     Close
                 </Button>
-                <Button variant="primary">Sign-up</Button>
+                <Link to='/signup'>
+                    <Button variant="primary">Sign-up</Button>
+                </Link>
                 <Button variant="success" type='submit' onClick={userSignin}>Submit</Button>
             </Modal.Footer>
         </Modal>
