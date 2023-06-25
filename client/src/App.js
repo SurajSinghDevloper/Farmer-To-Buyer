@@ -12,6 +12,7 @@ import ContactUs from './Container/ContactUs';
 import { Profile } from './Container/Profile/Index';
 import { BankAccount } from './Container/BankAccount';
 import { Security } from './Container/Security';
+import { getUserDetails } from './actions';
 
 function App() {
   const dispatch = useDispatch()
@@ -20,10 +21,10 @@ function App() {
     if (!auth.authenticate) {
       dispatch(isUserLoggedIn());
     }
-    // if (auth.authenticate) {
-    //   // dispatch(getInitialData());
-    // }
-  }, [auth.authenticate]);
+    if (auth.authenticate) {
+      dispatch(getUserDetails());
+    }
+  }, [auth.authenticate, dispatch]);
   return (
     <div className="App">
       <Router>

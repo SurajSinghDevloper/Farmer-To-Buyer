@@ -1,10 +1,54 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './style.css'
 import Navbar from '../Dashboard/Navbars';
 import Sidebar from '../Dashboard/Sidebar'
 import { Link } from 'react-router-dom/cjs/react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateUser } from '../../actions/profile.action';
 
 export const Profile = (props) => {
+
+    const dispatch = useDispatch()
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [email, setEmail] = useState('');
+    const [contactNumber, setContactNumber] = useState('');
+    const [userId, setUserId] = useState('');
+    const [address, setAddress] = useState('');
+    const [dob, setDob] = useState('');
+    const userDetails = useSelector((state) => state.userDetails);
+    console.log("👉👉👉 ~~ file: Index.js:21 ~~ Profile ~~ userDetails:", userDetails)
+
+
+    useEffect(() => {
+        if (userDetails) {
+            setFirstName(userDetails.userDetails.firstName);
+            setLastName(userDetails.userDetails.lastName);
+            setEmail(userDetails.userDetails.email);
+            setContactNumber(userDetails.userDetails.contactNumber);
+            setAddress(userDetails.userDetails.address)
+            setUserId(userDetails.userDetails._id);
+            setDob(userDetails.userDetails.dob)
+        }
+    }, [userDetails]);
+    console.log(userDetails.userDetails.firstName)
+
+    const handleUpdate = () => {
+        const updatedUser = {
+            _id: userId,
+            firstName,
+            lastName,
+            email,
+            contactNumber,
+            address,
+            dob,
+        };
+
+        dispatch(updateUser(updatedUser));
+    };
+
+
+
     return (
         <>
             <Navbar />
@@ -35,44 +79,89 @@ export const Profile = (props) => {
                                 <div className="card-body">
                                     <form>
                                         <div className="mb-3">
-                                            <label className="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
-                                            <input className="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username" />
+                                            <label className="small mb-1" htmlFor="inputUsername">Username (how your name will appear to other users on the site)</label>
+                                            <input
+                                                className="form-control"
+                                                id="inputUsername"
+                                                type="text"
+                                                placeholder="Enter your username"
+                                                onChange={(e) => setUserId(e.target.value)}
+                                                value={userId} />
                                         </div>
                                         <div className="row gx-3 mb-3">
                                             <div className="col-md-6">
-                                                <label className="small mb-1" for="inputFirstName">First name</label>
-                                                <input className="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Valerie" />
+                                                <label className="small mb-1" htmlFor="inputFirstName">First name</label>
+                                                <input
+                                                    className="form-control"
+                                                    id="inputFirstName"
+                                                    type="text"
+                                                    placeholder="Enter your first name"
+                                                    onChange={(e) => setFirstName(e.target.value)}
+                                                    value={firstName} />
                                             </div>
                                             <div className="col-md-6">
-                                                <label className="small mb-1" for="inputLastName">Last name</label>
-                                                <input className="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Luna" />
+                                                <label className="small mb-1" htmlFor="inputLastName">Last name</label>
+                                                <input
+                                                    className="form-control"
+                                                    id="inputLastName"
+                                                    type="text"
+                                                    placeholder="Enter your last name"
+                                                    onChange={(e) => setLastName(e.target.value)}
+                                                    value={lastName} />
                                             </div>
                                         </div>
                                         <div className="row gx-3 mb-3">
                                             <div className="col-md-6">
-                                                <label className="small mb-1" for="inputOrgName">Organization name</label>
-                                                <input className="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap" />
+                                                <label className="small mb-1" htmlFor="inputOrgName">Organization name</label>
+                                                <input
+                                                    className="form-control"
+                                                    id="inputOrgName" type="text"
+                                                    placeholder="Enter your organization name"
+                                                    value="Start Bootstrap" />
                                             </div>
                                             <div className="col-md-6">
-                                                <label className="small mb-1" for="inputLocation">Location</label>
-                                                <input className="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA" />
+                                                <label className="small mb-1" htmlFor="inputLocation">Location</label>
+                                                <input
+                                                    className="form-control"
+                                                    id="inputLocation"
+                                                    type="text"
+                                                    placeholder="Enter your location"
+                                                    onChange={(e) => setAddress(e.target.value)}
+                                                    value={address} />
                                             </div>
                                         </div>
                                         <div className="mb-3">
-                                            <label className="small mb-1" for="inputEmailAddress">Email address</label>
-                                            <input className="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com" />
+                                            <label className="small mb-1" htmlFor="inputEmailAddress">Email address</label>
+                                            <input
+                                                className="form-control"
+                                                id="inputEmailAddress"
+                                                type="email"
+                                                placeholder="Enter your email address"
+                                                onChange={(e) => setEmail(e.target.value)}
+                                                value={email} />
                                         </div>
                                         <div className="row gx-3 mb-3">
                                             <div className="col-md-6">
-                                                <label className="small mb-1" for="inputPhone">Phone number</label>
-                                                <input className="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567" />
+                                                <label className="small mb-1" htmlFor="inputPhone">Phone number</label>
+                                                <input
+                                                    className="form-control"
+                                                    id="inputPhone" type="tel"
+                                                    placeholder="Enter your phone number"
+                                                    onChange={(e) => setContactNumber(e.target.value)}
+                                                    value={contactNumber} />
                                             </div>
                                             <div className="col-md-6">
-                                                <label className="small mb-1" for="inputBirthday">Birthday</label>
-                                                <input className="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988" />
+                                                <label className="small mb-1" htmlFor="inputBirthday">Birthday</label>
+                                                <input
+                                                    className="form-control"
+                                                    id="inputBirthday" type="text"
+                                                    name="birthday"
+                                                    onChange={(e) => setDob(e.target.value)}
+                                                    placeholder="Enter your birthday"
+                                                    value={dob} />
                                             </div>
                                         </div>
-                                        <button className="btn btn-primary" type="button">Save changes</button>
+                                        <button onClick={handleUpdate} className="btn btn-primary" type="button">Save changes</button>
                                     </form>
                                 </div>
                             </div>

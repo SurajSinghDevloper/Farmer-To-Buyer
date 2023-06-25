@@ -2,11 +2,11 @@ import { userConstant } from '../actions/constant';
 
 const initialState = {
     loading: false,
-    user: null,
+    userDetails: {},
     error: ''
 };
 
-const userReducer = (state = initialState, action) => {
+const userDetailsReducer = (state = initialState, action) => {
     switch (action.type) {
         case userConstant.GET_USER_REQUEST:
             return {
@@ -17,14 +17,14 @@ const userReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                user: action.payload.user,
+                userDetails: action.payload.userDetails,
                 error: ''
             };
         case userConstant.GET_USER_FAILURE:
             return {
                 ...state,
                 loading: false,
-                user: null,
+                userDetails: null,
                 error: action.payload.error
             };
         default:
@@ -32,4 +32,4 @@ const userReducer = (state = initialState, action) => {
     }
 };
 
-export default userReducer;
+export default userDetailsReducer;

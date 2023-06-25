@@ -9,7 +9,7 @@ module.exports.updateUser = async (req, res) => {
         console.log("👉👉👉 ~~ file: userController.js:9 ~~ module.exports.updateUser= ~~ updatedUser:", updatedUser)
 
         // Find the user by ID
-        const user = await User.findById(userId);
+        const user = await User.findByIdAndUpdate(userId);
         console.log("👉👉👉 ~~ file: userController.js:13 ~~ module.exports.updateUser= ~~ user:", user)
 
         if (!user) {

@@ -24,10 +24,10 @@ export const BankAccount = () => {
                             <div className="card h-100 border-start-lg border-start-primary">
                                 <div className="card-body">
                                     <div className="small text-muted">Current monthly bill</div>
-                                    <div className="h3">$20.00</div>
+                                    <div className="h3">₹ 20.00</div>
                                     <a className="text-arrow-icon small" href="#!">
                                         Switch to yearly billing
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                                     </a>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@ export const BankAccount = () => {
                                     <div className="h3">July 15</div>
                                     <a className="text-arrow-icon small text-secondary" href="#!">
                                         View payment history
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                                     </a>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@ export const BankAccount = () => {
                                     <div className="h3 d-flex align-items-center">Freelancer</div>
                                     <a className="text-arrow-icon small text-success" href="#!">
                                         Upgrade plan
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                                     </a>
                                 </div>
                             </div>
@@ -96,20 +96,6 @@ export const BankAccount = () => {
                                 </div>
                             </div>
                             <hr />
-                            {/* <!-- Payment method 3--> */}
-                            <div className="d-flex align-items-center justify-content-between px-4">
-                                <div className="d-flex align-items-center">
-                                    <i className="fab fa-cc-amex fa-2x cc-color-amex"></i>
-                                    <div className="ms-4">
-                                        <div className="small">American Express ending in 9012</div>
-                                        <div className="text-xs text-muted">Expires 01/2026</div>
-                                    </div>
-                                </div>
-                                <div className="ms-4 small">
-                                    <a className="text-muted me-3" href="#!">Make Default</a>
-                                    <a href="#!">Edit</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     {/* <!-- Billing history card--> */}
@@ -133,18 +119,6 @@ export const BankAccount = () => {
                                             <td>06/15/2021</td>
                                             <td>$29.99</td>
                                             <td><span className="badge bg-light text-dark">Pending</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>#38594</td>
-                                            <td>05/15/2021</td>
-                                            <td>$29.99</td>
-                                            <td><span className="badge bg-success">Paid</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>#38223</td>
-                                            <td>04/15/2021</td>
-                                            <td>$29.99</td>
-                                            <td><span className="badge bg-success">Paid</span></td>
                                         </tr>
                                         <tr>
                                             <td>#38125</td>

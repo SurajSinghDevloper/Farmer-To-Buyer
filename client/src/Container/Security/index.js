@@ -27,17 +27,17 @@ export const Security = () => {
                                     <form>
                                         {/* <!-- Form Group (current password)--> */}
                                         <div className="mb-3">
-                                            <label className="small mb-1" for="currentPassword">Current Password</label>
+                                            <label className="small mb-1" htmlFor="currentPassword">Current Password</label>
                                             <input className="form-control" id="currentPassword" type="password" placeholder="Enter current password" />
                                         </div>
                                         {/* <!-- Form Group (new password)--> */}
                                         <div className="mb-3">
-                                            <label className="small mb-1" for="newPassword">New Password</label>
+                                            <label className="small mb-1" htmlFor="newPassword">New Password</label>
                                             <input className="form-control" id="newPassword" type="password" placeholder="Enter new password" />
                                         </div>
                                         {/* <!-- Form Group (confirm password)--> */}
                                         <div className="mb-3">
-                                            <label className="small mb-1" for="confirmPassword">Confirm Password</label>
+                                            <label className="small mb-1" htmlFor="confirmPassword">Confirm Password</label>
                                             <input className="form-control" id="confirmPassword" type="password" placeholder="Confirm new password" />
                                         </div>
                                         <button className="btn btn-primary" type="button">Save</button>
@@ -54,11 +54,11 @@ export const Security = () => {
                                     <form>
                                         <div className="form-check">
                                             <input className="form-check-input" id="radioPrivacy1" type="radio" name="radioPrivacy" checked="" />
-                                            <label className="form-check-label" for="radioPrivacy1">Public (posts are available to all users)</label>
+                                            <label className="form-check-label" htmlFor="radioPrivacy1">Public (posts are available to all users)</label>
                                         </div>
                                         <div className="form-check">
                                             <input className="form-check-input" id="radioPrivacy2" type="radio" name="radioPrivacy" />
-                                            <label className="form-check-label" for="radioPrivacy2">Private (posts are available to only users in your groups)</label>
+                                            <label className="form-check-label" htmlFor="radioPrivacy2">Private (posts are available to only users in your groups)</label>
                                         </div>
                                     </form>
                                     <hr className="my-4" />
@@ -68,11 +68,11 @@ export const Security = () => {
                                     <form>
                                         <div className="form-check">
                                             <input className="form-check-input" id="radioUsage1" type="radio" name="radioUsage" checked="" />
-                                            <label className="form-check-label" for="radioUsage1">Yes, share data and crash reports with app developers</label>
+                                            <label className="form-check-label" htmlFor="radioUsage1">Yes, share data and crash reports with app developers</label>
                                         </div>
                                         <div className="form-check">
                                             <input className="form-check-input" id="radioUsage2" type="radio" name="radioUsage" />
-                                            <label className="form-check-label" for="radioUsage2">No, limit my data sharing with app developers</label>
+                                            <label className="form-check-label" htmlFor="radioUsage2">No, limit my data sharing with app developers</label>
                                         </div>
                                     </form>
                                 </div>
@@ -87,15 +87,15 @@ export const Security = () => {
                                     <form>
                                         <div className="form-check">
                                             <input className="form-check-input" id="twoFactorOn" type="radio" name="twoFactor" checked="" />
-                                            <label className="form-check-label" for="twoFactorOn">On</label>
+                                            <label className="form-check-label" htmlFor="twoFactorOn">On</label>
                                         </div>
                                         <div className="form-check">
                                             <input className="form-check-input" id="twoFactorOff" type="radio" name="twoFactor" />
-                                            <label className="form-check-label" for="twoFactorOff">Off</label>
+                                            <label className="form-check-label" htmlFor="twoFactorOff">Off</label>
                                         </div>
                                         <div className="mt-3">
-                                            <label className="small mb-1" for="twoFactorSMS">SMS Number</label>
-                                            <input className="form-control" id="twoFactorSMS" type="tel" placeholder="Enter a phone number" value="555-123-4567" />
+                                            <label className="small mb-1" htmlFor="twoFactorSMS">SMS Number</label>
+                                            <input className="form-control" id="twoFactorSMS" type="tel" placeholder="Enter a phone number" value=" " />
                                         </div>
                                     </form>
                                 </div>
